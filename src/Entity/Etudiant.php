@@ -44,6 +44,11 @@ class Etudiant
      */
     private $notes;
 
+    public function __toString()
+    {
+        return $this->getPrenom() . ' ' . $this->getNom();
+    }
+
     public function __construct()
     {
         $this->notes = new ArrayCollection();

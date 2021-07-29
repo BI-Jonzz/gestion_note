@@ -29,6 +29,12 @@ class Matiere
      */
     private $notes;
 
+
+    public function __toString()
+    {
+        return $this->getLibelle() ;
+    }
+
     public function __construct()
     {
         $this->notes = new ArrayCollection();

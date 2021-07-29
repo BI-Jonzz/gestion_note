@@ -1,4 +1,23 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+<div class="input-field col s12 m6 l6 offset-m3 offset-l3">
+    {{ form_widget(form.prenom, {'attr': {'placeholder': 'Prenom'}}) }}
+    <span class="error">{{ form_errors(form.prenom) }}</span>
+</div>
+<div class="input-field col s12 m6 l6 offset-m3 offset-l3">
+    {{ form_widget(form.nom, {'attr': {'placeholder': 'Nom'}}) }}
+    <span class="error">{{ form_errors(form.nom) }}</span>
+</div>
+<div class="input-field col s12 m6 l6 offset-m3 offset-l3">
+    {{ form_widget(form.classe, {'attr': {'placeholder': 'Classe'}}) }}
+    <span class="error">{{ form_errors(form.classe) }}</span>
+</div>
+<div class="input-field col s12 m6 l6 offset-m3 offset-l3">
+    {{ form_widget(form.login, {'attr': {'placeholder': 'Login'}}) }}
+    <span class="error">{{ form_errors(form.login) }}</span>
+</div>
+<div class="input-field col s12 m6 l6 offset-m3 offset-l3">
+    {{ form_widget(form.plainPassword, {'attr': {'placeholder': 'Mot de passe'}}) }}
+    <span class="error">{{ form_errors(form.plainPassword) }}</span>
+</div>
+<button class="btn">Enregistrer</button>
 {{ form_end(form) }}

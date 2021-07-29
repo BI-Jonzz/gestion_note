@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Notes;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -13,8 +14,7 @@ class NotesType extends AbstractType
     {
         $builder
             ->add('note')
-            ->add('commentaire')
-            ->add('etudiantId')
+            ->add('commentaire', TextareaType::class)
             ->add('matiereId')
             ->add('professeurId')
         ;

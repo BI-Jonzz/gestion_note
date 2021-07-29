@@ -13,7 +13,45 @@
             {#{{ encore_entry_script_tags('app') }}#}
         {% endblock %}
     </head>
+    <style>
+        .header {
+            margin-top: 50px;
+        }
+        .body {
+            margin: 50px;
+        }
+        .ul-li {
+            margin: 12px;
+            padding: 12px 12px 12px 0;
+            display: inline;
+        }
+        .ul-li-last {
+            margin: 12px;
+            padding: 12px 0 12px 12px;
+            float:right;
+        }
+        .ul {
+            list-style-type: none;
+        }
+    </style>
     <body>
-        {% block body %}{% endblock %}
+        <div class="header">
+            <ul class="ul">
+                <li class="ul-li"><a href="{{ path('etudiant_index') }}">Etudiant</a></li>
+                <li class="ul-li"><a href="{{ path('matiere_index') }}">Matiere</a></li>
+                <li class="ul-li"><a href="{{ path('notes_index') }}">Notes</a></li>
+                <li class="ul-li"><a href="{{ path('professeur_index') }}">Professeur</a></li>
+                <li class="ul-li-last">
+                    {% if app.user %}
+                        <a href="{{ path('app_logout') }}">Logout</a>
+                    {% else %}
+                        <a href="{{ path('app_login') }}">Login</a>
+                    {% endif %}
+                </li>
+            </ul>
+        </div>
+        <div class="body">
+            {% block body %}{% endblock %}
+        </div>
     </body>
 </html>

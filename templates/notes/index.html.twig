@@ -11,6 +11,8 @@
                 <th>Id</th>
                 <th>Note</th>
                 <th>Commentaire</th>
+                <th>Matière</th>
+                <th>Professeur</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -20,6 +22,9 @@
                 <td>{{ note.id }}</td>
                 <td>{{ note.note }}</td>
                 <td>{{ note.commentaire }}</td>
+                <td>{% if note.matiereId %}{{ note.matiereId }} {% endif %}</td>
+                <td>{% if note.professeurId %}{{ note.professeurId }} {% endif %}</td>
+
                 <td>
                     <a href="{{ path('notes_show', {'id': note.id}) }}">show</a>
                     <a href="{{ path('notes_edit', {'id': note.id}) }}">edit</a>
@@ -27,11 +32,11 @@
             </tr>
         {% else %}
             <tr>
-                <td colspan="4">no records found</td>
+                <td colspan="4">aucune donnée</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('notes_new') }}">Create new</a>
+    <a href="{{ path('notes_new') }}">nouvelle</a>
 {% endblock %}

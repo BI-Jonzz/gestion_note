@@ -3,7 +3,7 @@
 {% block title %}Etudiant index{% endblock %}
 
 {% block body %}
-    <h1>Etudiant index</h1>
+    <h1>Liste Etudiant</h1>
 
     <table class="table">
         <thead>
@@ -29,11 +29,11 @@
             </tr>
         {% else %}
             <tr>
-                <td colspan="5">no records found</td>
+                <td colspan="5">aucune donnée</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('etudiant_new') }}">Create new</a>
+    <a href="{{ path('etudiant_new') }}">nouveau</a>
 {% endblock %}
